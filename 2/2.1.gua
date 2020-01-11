@@ -295,7 +295,7 @@ const france = function(x, y){
 //     center_rect(x,y,w1,h)
 // }
 
-france(0,0)
+// france(0,0)
 
 // 作业 8
 // 画德国国旗
@@ -312,8 +312,19 @@ france(0,0)
 // https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547200521471&di=4e3d41e58fd017fffbcdfbb4d33cacc0&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F01%2F40%2F91%2F47%2F58fddf9563923.png
 
 
+const germany = function(x, y){
+    var w = 200
+    var h = 150
+    var h1 = h / 3
+    var y1 = y
+    var y2 = y1 + h1
+    var y3 = y2 + h1
+    rect(x, y1, w, h1)
+    rect(x, y2, w, h1)
+    rect(x, y3, w, h1)
+}
 
-
+// germany(0,0)
 
 // 作业 9
 // 画 冈比亚国旗
@@ -329,8 +340,32 @@ france(0,0)
 
 // https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547200557222&di=c371148958d1d03a56c9b8fb915fa67a&imgtype=0&src=http%3A%2F%2Fimg5.cache.netease.com%2Fcnews%2F2013%2F11%2F15%2F20131115084103a7ae1_550.png
 
+const gambia = function(x, y){
+    var w = 200
+    var h = 150
 
+    var x1 = x + w / 2
 
+    var y1 = y + h / 6
+    var y2 = y + h / 3 + h / 48
+    var y3 = y + h / 2
+    var y4 = y + h * 2 / 3 - h / 48
+    var y5 = y + h - h / 6
+
+    var h1 = h / 3
+    var h2 = h / 24
+    var h3 = h / 4
+    var h4 = h / 24
+    var h5 = h / 3
+
+    center_rect(x1, y1, w, h1)
+    center_rect(x1, y2, w, h2)
+    center_rect(x1, y3, w, h3)
+    center_rect(x1, y4, w, h4)
+    center_rect(x1, y5, w, h5)
+}
+
+// gambia(0,0)
 
 
 // 作业 10
@@ -347,7 +382,22 @@ france(0,0)
 
 // https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=7adaad187b3e6709be0042f903fcf800/7acb0a46f21fbe09b63f922b6f600c338744ada8.jpg
 
+const switzerland =function(x, y){
+    var w = 200
+    var h = 150
 
+    var w1 = 75
+    var h1 = 25
+
+    var x1 = x + w / 2
+    var y1 = x + h / 2
+
+    center_rect(x1,y1,w,h)
+    center_rect(x1,y1,w1,h1)
+    center_rect(x1,y1,h1,w1)
+}
+
+// switzerland(0,0)
 
 // 作业 11
 // 画朝鲜国旗
@@ -373,5 +423,38 @@ france(0,0)
 
 // http://img1.cache.netease.com/catchpic/6/63/63D56955DF111752ADEDDF94ABC830F8.jpg
 
+const northkorea = function(x, y){
+    var w = 200
+    var h = 150
+
+    var h1 = 4 / 25 * h
+    var h2 = 1 / 25 * h
+    var h3 = 15 / 25 * h
+    var h4 = 1 / 25 * h
+    var h5 = 4 / 25 * h
+
+    var x1 = x
+
+    var y1 = y
+    var y2 = y1 + h1
+    var y3 = y2 + h2
+    var y4 = y3 + h3
+    var y5 = y4 + h4
+
+    rect(x1, y1, w, h1)
+    rect(x1, y2, w, h2)
+    rect(x1, y3, w, h3)
+    rect(x1, y4, w, h4)
+    rect(x1, y5, w, h5)
+
+    var xn = x + w * 2 / 5
+    var yn = y + h / 2
+    var rn = h3 / 3
+
+    circle(xn, yn, rn)
+    penta1(xn, yn, rn)
+}
+
+northkorea(0,0)
 
 // 写出上述作业后, 如果你实在无聊, 还可以画美国国旗
