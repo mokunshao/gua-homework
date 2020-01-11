@@ -176,7 +176,7 @@ const penta = function(x,y,length){
     }
 }
 
-penta(0,0,100)
+// penta(0,0,100)
 
 // 作业 4
 // 实现一个函数画日本国旗
@@ -202,7 +202,7 @@ const japan = function(x,y){
     circle(x1,y1,r)
 }
 
-japan(0,0)
+// japan(0,0)
 
 // 作业 5
 // 实现一个五角星函数
@@ -232,9 +232,15 @@ const cos = function(degree) {
 // 4. 五角星的长度为 var length = cos(du) * r * 2
 // 5. 调用作业 3 的函数 penta(x1, y1, length)
 
+const penta1 = function(x, y, r){
+    var du = 18
+    var x1 = x - cos(du) * r
+    var y1 = y - sin(du) * r
+    var length = cos(du) * r * 2
+    penta(x1, y1, length)
+}
 
-
-
+// penta1(0,0,20)
 
 // 作业 6
 // 实现一个函数画中国国旗(以下国旗题目都是如此 不重复了)
@@ -269,9 +275,27 @@ const cos = function(degree) {
 
 // https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547200454269&di=2f5a17ee4ced5db63e125a7b954d0c7e&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F83%2F66%2F55a58PICheG_1024.png
 
+const france = function(x, y){
+    var w = 200
+    var h = 150
+    var w1 = w / 3
+    var x1 = x
+    var x2 = x + w1
+    var x3 = x2 + w1
+    rect(x1, y, w1, h)
+    rect(x2, y, w1, h)
+    rect(x3, y, w1, h)
+}
 
+// const france = function(x, y){
+//     var w = 200
+//     var h = 150
+//     var w1 = w / 3
+//     center_rect(x,y,w,h)
+//     center_rect(x,y,w1,h)
+// }
 
-
+france(0,0)
 
 // 作业 8
 // 画德国国旗
