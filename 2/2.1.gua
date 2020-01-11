@@ -53,43 +53,64 @@
 // 6. 这时候你就在正多边形的顶部横边的左顶点并且方向朝右了
 //  以此为起点画一个正 36 边形即可
 
+
+
 const jump = function(x, y) {
     penup()
     goto(x, y)
     pendown()
 }
 
-const polygon = function(x, y, n, length) {
-    jump(x, y)
-    // 设置朝向, 确保箭头朝向 右边
-    // 当然如果是用 goto 来画的话, 就不用关心朝向
+// const polygon = function(x, y, n, length) {
+//     jump(x, y)
+//     // 设置朝向, 确保箭头朝向 右边
+//     // 当然如果是用 goto 来画的话, 就不用关心朝向
+//     setHeading(0)
+//     // 循环画正方形
+//     // 当然, 你可以用 goto 来画
+//     // 只需要计算一下四个顶点的坐标 (这很简单)
+//     var degree = 360/n
+//     // var degree =180-(n-2)*180/n
+//     var i = 0
+//     while (i < n) {
+//         forward(length)
+//         right(degree)
+//         i = i + 1
+//     }
+// }
+//
+// const left = function(){
+//     right(270)
+// }
+
+// const circle = function (x,y,r){
+//     var n = 36
+//     var x1 = x-r
+//     var y1 = y-r
+//     var length = (2 * math.pi * r) / n
+//     return polygon(x1,y1,n,length)
+// }
+
+const circle = function (x,y,r){
+    jump(x,y)
     setHeading(0)
-    // 循环画正方形
-    // 当然, 你可以用 goto 来画
-    // 只需要计算一下四个顶点的坐标 (这很简单)
+    var n = 36
+    var angle = (90 + (360 / n) / 2)
+    right(-angle)
+    forward(r)
+    right(angle)
+    var l = (2 * math.pi * r) / n
     var degree = 360/n
-    // var degree =180-(n-2)*180/n
     var i = 0
-    while (i < n) {
-        forward(length)
+    while(i<n){
+        forward(l)
         right(degree)
-        i = i + 1
+        i=i+1
     }
 }
 
-const left = function(){
-    right(270)
-}
+circle(0,0,50)
 
-const circle = function (x,y,r){
-    var n = 36
-    var x1 = x-r
-    var y1 = y-r
-    var length = (2 * math.pi * r) / n
-    return polygon(x1,y1,n,length)
-}
-
-// circle(0,0,50)
 
 // 作业 2
 // 实现一个矩形函数
@@ -127,10 +148,10 @@ const rect = function(x, y, w, h) {
 const center_rect = function(x, y, w, h){
     var x1 = x - w/2
     var y1 = y - h/2
-    rect(x1,y1,w,h)
+    rect(x1,y2,w,h)
 }
 
-// center_rect(0,0,40,38)
+center_rect(0,0,40,38)
 
 // 作业 3
 // 实现一个正五角星(国旗大星星那种)函数
