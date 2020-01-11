@@ -109,7 +109,7 @@ const circle = function (x,y,r){
     }
 }
 
-circle(0,0,50)
+// circle(0,0,50)
 
 
 // 作业 2
@@ -148,10 +148,10 @@ const rect = function(x, y, w, h) {
 const center_rect = function(x, y, w, h){
     var x1 = x - w/2
     var y1 = y - h/2
-    rect(x1,y2,w,h)
+    rect(x1,y1,w,h)
 }
 
-center_rect(0,0,40,38)
+// center_rect(0,0,40,38)
 
 // 作业 3
 // 实现一个正五角星(国旗大星星那种)函数
@@ -165,9 +165,18 @@ center_rect(0,0,40,38)
 // 2. 每次循环中前进 length 的长度, 右转 144 度
 // 3. 别忘了循环的时候 i 增加 1
 
+const penta = function(x,y,length){
+    jump(x,y)
+    setHeading(0)
+    var i = 0
+    while(i<5){
+        forward(length)
+        right(144)
+        i=i+1
+    }
+}
 
-
-
+penta(0,0,100)
 
 // 作业 4
 // 实现一个函数画日本国旗
@@ -183,9 +192,17 @@ center_rect(0,0,40,38)
 // 1. 调用 center_rect 函数画一个矩形
 // 2. 调用 circle 函数画一个圆形*/
 
+const japan = function(x,y){
+    var w = 200
+    var h = 150
+    var x1 = x + w/2
+    var y1 = y + h/2
+    var r = h*0.3
+    center_rect(x1,y1,w,h)
+    circle(x1,y1,r)
+}
 
-
-
+japan(0,0)
 
 // 作业 5
 // 实现一个五角星函数
